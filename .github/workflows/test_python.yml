@@ -1,6 +1,4 @@
-name: CI
-env: 
-  APPLICATION_NAME: "My new job"
+name: test_python
 
 on:
   push:
@@ -11,12 +9,10 @@ jobs:
     steps: 
     - name: clone from my rep
       uses: actions/checkout@v3
-    - name: content
-      run: ls -la
-    - name: python run
+    - name: flask install
       run: pip install flask
-    - name: run
+    - name: python run
       run: python main.py &
     - name: curl
-      run: curl -s http://127.0.0.1:5000/ | if grep -q "Hello1 World"; then echo "good job"; else qwe; fi
+      run: curl -s http://127.0.0.1:5000/ | if grep -q "Hello World"; then echo "good job"; else qwe; fi
       
