@@ -15,14 +15,16 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
     - name: print hello
-      run: echo "hello world from build"
+      run: echo "hello world from ${{ env.APPLICATION_NAME }} "
       
   new:
     runs-on: ubuntu-latest
     needs: [build]
     steps: 
-    - name: print hello
-      run: echo "hello world from ${{ env.APPLICATION_NAME }} "
+    - name: clone from my rep
+      run: actions/checkout@v3
+    - name: content
+      run: ls -la
   
     
       
