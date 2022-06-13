@@ -26,7 +26,11 @@ jobs:
     - name: content
       run: ls -la
     - name: check python version
-      run: python --version
+      run: |
+        apt install software-properties-common
+        add-apt-repository ppa:deadsnakes/ppa
+        apt install python3.9
+        python --version
   
     
       
