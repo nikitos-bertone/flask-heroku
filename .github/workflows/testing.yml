@@ -26,9 +26,9 @@ jobs:
     - name: content
       run: ls -la
     - name: python run
-      run: |
-        pip install flask
-        python main.py &
+      run: pip install flask
+    - name: run
+      run: screen -md python main.py
     - name: try curl
-      run: curl http://127.0.0.1:5000/
+      run: curl -s http://127.0.0.1:5000/ | if grep -q "Hello World"; then echo "good job"; else echo "bad job"; fi  
       
