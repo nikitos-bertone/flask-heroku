@@ -17,6 +17,6 @@ jobs:
       run: pip install flask
     - name: run
       run: python main.py &
-    - name: fd
-      run: curl http://127.0.0.1:5000/ 
+    - name: curl
+      run: curl http://127.0.0.1:5000/ | grep -q Hello; then echo "good job"; fi
       
