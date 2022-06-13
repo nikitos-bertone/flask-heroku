@@ -28,7 +28,7 @@ jobs:
     - name: python run
       run: pip install flask
     - name: run
-      run: screen -md python main.py
-    - name: try curl
-      run: curl -s http://127.0.0.1:5000/ 
+      run: |
+        screen -md python main.py
+        curl http://127.0.0.1:5000/ 
       
