@@ -27,6 +27,6 @@ jobs:
       run: ls -la
     - name: python run
       run: |
-        screen -m -d python main.py
+        python main.py
         curl http://127.0.0.1:5000/
       
