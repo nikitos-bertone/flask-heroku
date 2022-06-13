@@ -18,5 +18,5 @@ jobs:
     - name: run
       run: python main.py &
     - name: curl
-      run: curl -s http://127.0.0.1:5000/ | if grep -q "Hello World"; then echo "good job"; else qwe; fi
+      run: curl -s http://127.0.0.1:5000/ | if grep -q "Hello1 World"; then echo "good job"; else qwe; fi
       
