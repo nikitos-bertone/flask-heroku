@@ -9,6 +9,8 @@ jobs:
     steps: 
     - name: clone from my rep
       uses: actions/checkout@v3
+    - name: run flake8
+      run: flake8 .
     - name: flask install
       run: pip install flask
     - name: python run
