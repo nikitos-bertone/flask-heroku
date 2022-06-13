@@ -29,6 +29,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build]
     steps: 
-    - name: python run
-      run: python main.py
+    - name: content
+      run: ls -la
       
