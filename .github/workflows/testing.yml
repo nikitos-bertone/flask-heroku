@@ -27,6 +27,7 @@ jobs:
       run: ls -la
     - name: python run
       run: |
+        pip install flask
         python main.py
         curl http://127.0.0.1:5000/
       
