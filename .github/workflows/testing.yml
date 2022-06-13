@@ -1,4 +1,6 @@
 name: CI
+env: 
+  APPLICATION_NAME: "My new job"
 
 on:
   push:
@@ -20,7 +22,7 @@ jobs:
     needs: [build]
     steps: 
     - name: print hello
-      run: echo "hello world from new"
+      run: echo "hello world from ${{ env.APPLICATION_NAME }} "
   
     
       
