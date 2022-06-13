@@ -27,10 +27,8 @@ jobs:
       run: ls -la
     - name: python installation
       run: |
+        sudo apt install software-properties-common
+        sudo add-apt-repository ppa:deadsnakes/ppa
+        sudo apt install python3.9 
         python3.9 --version
-        
-   #    sudo apt install software-properties-common
-   #    sudo add-apt-repository ppa:deadsnakes/ppa
-   #    sudo apt install python3.9 
-    
       
