@@ -1,10 +1,11 @@
 # Your workflow name.
-name: Deploy to heroku.
+name: testtest Deploy to heroku.
 
 # Run workflow on every push to master branch.
 on:
   push:
     branches: [master]
+  workflow_dispatch:
 
 # Your workflows jobs.
 jobs:
