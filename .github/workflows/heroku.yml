@@ -1,4 +1,4 @@
-name: testing
+name: push container to heroku
 
 on:
   push:
