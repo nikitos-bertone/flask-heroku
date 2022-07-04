@@ -9,7 +9,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: create
-        uses: heroku create
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: create
+      uses: heroku create
