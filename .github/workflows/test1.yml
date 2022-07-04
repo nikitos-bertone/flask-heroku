@@ -11,5 +11,8 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-    - name: h
-      run: heroku login
+    - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+      with:
+        heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+        heroku_app_name: "YOUR APP's NAME" #Must be unique in Heroku
+        heroku_email: "YOUR EMAIL
