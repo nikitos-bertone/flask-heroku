@@ -12,4 +12,4 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
     - name: h
-      uses: heroku login
+      run: heroku login
