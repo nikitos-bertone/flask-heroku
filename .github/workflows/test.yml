@@ -11,13 +11,7 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-    - name: create netrc
-      run: echo -e "machine api.heroku.com \n
-            login ${{secrets.HEROKU_EMAIL}} \n
-            password ${{secrets.HEROKU_API_KEY}} \n  
-            machine git.heroku.com \n
-            login ${{secrets.HEROKU_EMAIL}} \n
-            password ${{secrets.HEROKU_API_KEY}}" > .netrc
-    - name: fvdfhb
+    - name: Login to Heroku Container registry
+      env: 
+        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
       run: heroku container:login
-  
