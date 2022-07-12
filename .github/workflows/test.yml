@@ -19,5 +19,5 @@ jobs:
             login ${{secrets.HEROKU_EMAIL}} \n
             password ${{secrets.HEROKU_API_KEY}}" > .netrc
     - name: fvdf
-      run: cat .netrc
+      run: heroku container:login
   
