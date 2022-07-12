@@ -14,8 +14,8 @@ jobs:
     - name: create netrc
       run: echo -e "machine api.heroku.com \n
             login ${{secrets.HEROKU_EMAIL}} \n
-            password ${{secrets.HEROKU_API_KEY}} \n
-          machine git.heroku.com \n
+            password ${{secrets.HEROKU_API_KEY}} \n  
+            machine git.heroku.com \n
             login ${{secrets.HEROKU_EMAIL}} \n
             password ${{secrets.HEROKU_API_KEY}}" > .netrc
     - name: fvdf
