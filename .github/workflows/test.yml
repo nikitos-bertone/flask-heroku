@@ -11,15 +11,13 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-    - name: Login to Heroku Container registry
-      env: 
-        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-      run: heroku container:login
-    - name: Build and push
-      env:
-        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-      run: heroku container:push -a nikita-apppp-jauanvf web 
-    - name: Release
-      env:
-        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-      run: heroku container:release -a nikita-apppp-jauanvf web 
+    - name: create netrc
+      run: echo "machine api.heroku.com \n \
+         login me@example.com
+         password c4cd94da15ea0544802c2cfd5ec4ead324327430 \n \
+         machine git.heroku.com \n \
+         login me@example.com \n ]
+         password c4cd94da15ea0544802c2cfd5ec4ead324327430" > .netrc
+    - name: fvdf
+      run: cat .netrc
+  
