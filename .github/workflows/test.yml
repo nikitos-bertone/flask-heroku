@@ -12,4 +12,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
     - name: Login to Heroku Container registry
+      env: 
+        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
       run: heroku container:login
+      run: heroku auth:whoami
