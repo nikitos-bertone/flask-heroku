@@ -1,4 +1,4 @@
-name: push container to heroku
+name: new push
 
 on: 
   push:
@@ -11,9 +11,16 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-    - name: Docker build
-      run: docker login --username=${{ secrets.HEROKU_EMAIL }} --password=${{ secrets.HEROKU_API_KEY }} registry.heroku.com
-    - name: Publish
+    - name: credentials
       run: |
-        heroku container:push -a ${{ secrets.HEROKU_APP_NAME }} web 
-        heroku container:release -a ${{ secrets.HEROKU_APP_NAME }} web 
+          cat > ~/.netrc <<EOF
+            machine api.heroku.com
+              login $HEROKU_EMAIL
+              password $HEROKU_API_KEY
+            machine git.heroku.com
+              login $HEROKU_EMAIL
+              password $HEROKU_API_KEY
+          EOF
+      env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+          HEROKU_EMAIL: ${{ secrets.HEROKU_EMAIL }
