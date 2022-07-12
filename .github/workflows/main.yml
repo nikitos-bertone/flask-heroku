@@ -15,3 +15,5 @@ jobs:
       run: echo -e "machine api.heroku.com \n  login ${{ secrets.HEROKU_EMAIL }} \n  password ${{ secrets.HEROKU_API_KEY }} \nmachine git.heroku.com \n  login ${{ secrets.HEROKU_EMAIL }} \n  password ${{ secrets.HEROKU_API_KEY }}" > ~/.netrc
     - name: vf
       run: cat ~/.netrc
+    - name: nj
+      run: heroku container:login
