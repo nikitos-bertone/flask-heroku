@@ -13,7 +13,11 @@ jobs:
       uses: actions/checkout@v3
     - name: create netrc
       run: echo -e "machine api.heroku.com \n
-           login me@example.com" > .netrc
+            login ${{secrets.HEROKU_EMAIL}} \n
+            password ${{secrets.HEROKU_API_KEY}} \n
+            machine git.heroku.com \n
+            login ${{secrets.HEROKU_EMAIL}} \n
+            password ${{secrets.HEROKU_API_KEY}}" > .netrc
     - name: fvdf
       run: cat .netrc
   
