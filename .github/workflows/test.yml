@@ -12,7 +12,8 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
     - name: create netrc
-      run: echo -e "machine api.heroku.com \n login me@example.com" > .netrc
+      run: echo -e "machine api.heroku.com \n \
+      login me@example.com" > .netrc
     - name: fvdf
       run: cat .netrc
   
