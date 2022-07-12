@@ -18,6 +18,6 @@ jobs:
             machine git.heroku.com \n
             login ${{secrets.HEROKU_EMAIL}} \n
             password ${{secrets.HEROKU_API_KEY}}" > .netrc
-    - name: fvdf
+    - name: fvdfhb
       run: heroku container:login
   
