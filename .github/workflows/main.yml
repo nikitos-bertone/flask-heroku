@@ -24,7 +24,6 @@ jobs:
     - name: nj
       run: |
         heroku container:login
-        heroku create -a nikita-app-123
         docker build -t registry.heroku.com/nikita-app-123/web .
     - name: ert
       run: docker push registry.heroku.com/nikita-app-123/web
