@@ -12,7 +12,8 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
     - name: heroku login
-      run: cat <<EOF > ~/.netrc 
+      run: |
+          cat <<EOF > ~/.netrc 
             machine api.heroku.com 
               login ${{ secrets.HEROKU_EMAIL }}
              password ${{ secrets.HEROKU_API_KEY }}
