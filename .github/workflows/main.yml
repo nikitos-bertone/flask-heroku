@@ -15,14 +15,13 @@ jobs:
       run: |
         sudo apt-get install curl
         curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
-        heroku
-   # - name: credentials
-      #run: echo -e "machine api.heroku.com \n  login $HEROKU_EMAIL \n  password $HEROKU_API_KEY \nmachine git.heroku.com \n  login $HEROKU_EMAIL \n  password $HEROKU_API_KEY" > ~/.netrc
-      #env:
-        #HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-        #HEROKU_EMAIL: ${{ secrets.HEROKU_EMAIL }}      
-   # - #name: vf
-      #run: cat ~/.netrc
-   # - #name: nj
-    #  run: heroku container:login
+    - name: credentials
+      run: echo -e "machine api.heroku.com \n  login $HEROKU_EMAIL \n  password $HEROKU_API_KEY \nmachine git.heroku.com \n  login $HEROKU_EMAIL \n  password $HEROKU_API_KEY" > ~/.netrc
+      env:
+        HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+        HEROKU_EMAIL: ${{ secrets.HEROKU_EMAIL }}      
+    - name: vf
+      run: cat ~/.netrc
+    - name: nj
+      run: heroku container:login
       
