@@ -13,13 +13,13 @@ jobs:
       uses: actions/checkout@v3
     - name: heroku login
       run: cat <<EOF > ~/.netrc 
-          machine api.heroku.com 
-            login ${{ secrets.HEROKU_EMAIL }}
-            password ${{ secrets.HEROKU_API_KEY }}
-          machine git.heroku.com
-            login ${{ secrets.HEROKU_EMAIL }}
-            password ${{ secrets.HEROKU_API_KEY }}
-          EOF
+            machine api.heroku.com 
+              login ${{ secrets.HEROKU_EMAIL }}
+             password ${{ secrets.HEROKU_API_KEY }}
+            machine git.heroku.com
+              login ${{ secrets.HEROKU_EMAIL }}
+             password ${{ secrets.HEROKU_API_KEY }}
+           EOF
     - name: vf
       run: cat ~/.netrc
     - name: nj
