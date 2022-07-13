@@ -24,7 +24,10 @@ jobs:
     - name: nj
       run: |
         heroku container:login
-        docker
+        heroku create -a nikita-app-123
+        docker build -t regestry.heroku.com/nikita-app-123/web .
+        docker push regestry.heroku.com/nikita-app-123/web
+        heroku container:release web -a nikita-app-123
         
         
     
