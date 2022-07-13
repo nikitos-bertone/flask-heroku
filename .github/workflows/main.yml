@@ -12,7 +12,9 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
     - name: cd
-      run: sudo apt-get install curl
+      run: |
+      sudo apt-get install curl
+      curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
    # - name: credentials
       #run: echo -e "machine api.heroku.com \n  login $HEROKU_EMAIL \n  password $HEROKU_API_KEY \nmachine git.heroku.com \n  login $HEROKU_EMAIL \n  password $HEROKU_API_KEY" > ~/.netrc
       #env:
