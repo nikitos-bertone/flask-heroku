@@ -25,8 +25,10 @@ jobs:
       run: |
         heroku container:login
         heroku create -a nikita-app-123
-        docker build -t regestry.heroku.com/nikita-app-123/web .
+        docker build -t registry.heroku.com/nikita-app-123/web .
+    - name: ert
         docker push regestry.heroku.com/nikita-app-123/web
+    - name: vff
         heroku container:release web -a nikita-app-123
         
         
