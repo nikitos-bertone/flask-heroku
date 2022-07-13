@@ -1,4 +1,4 @@
-name: new push
+name: push container to heroku
 
 on: 
   push:
@@ -21,14 +21,12 @@ jobs:
               login ${{ secrets.HEROKU_EMAIL }}
              password ${{ secrets.HEROKU_API_KEY }}
            EOF
-    - name: nj
+    - name: build and push to heroku
       run: |
         heroku container:login
-        docker build -t registry.heroku.com/nikita-app-123/web .
-    - name: ert
-      run: docker push registry.heroku.com/nikita-app-123/web
-    - name: vff
-      run: heroku container:release web -a nikita-app-123
+        docker build -t registry.heroku.com/nikita-app-test3/web .
+        docker push registry.heroku.com/nikita-app-test3/web
+        heroku container:release web -a nikita-app-test3
         
         
     
