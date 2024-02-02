@@ -12,7 +12,8 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
       with:
-       files: Dockerfile
+       sparse-checkout: 'test/'
+       sparse-checkout-cone-mode: false
     - name: df
       run: |
         ls -l /home/runner/work/flask-heroku/flask-heroku/
