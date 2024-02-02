@@ -1,0 +1,1 @@
+{"ansible_facts": {"ansible_local": {"passwd_users": [["root"], ["postgres_exp"]], "ssh_users": [["teamcity"], ["petr"], ["petr2"], ["petr3"], ["sashka"], ["sergey.kletsov"], ["n.shalin"], ["nikita"], ["dolin"], ["efimov"], ["n.gavrilov"]], "vhost": [["idchess-stage02-sel.idsport.tech;"]]}, "discovered_interpreter_python": "/usr/bin/python3"}, "changed": false}
