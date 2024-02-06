@@ -22,4 +22,4 @@ jobs:
     - name: dsad
       env: 
        var: '/home/runner/work/flask-heroku/flask-heroku/test/idchess-stage02-sel.idsport.tech'
-      run: cat $var
+      run: sed -i 's/sashka/kakashka/' $var
