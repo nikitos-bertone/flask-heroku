@@ -22,4 +22,4 @@ jobs:
     - name: dsad
       env: 
        var: '/home/runner/work/flask-heroku/test/idchess-stage02-sel.idsport.tech'
-      run: ls /home/runner/work/flask-heroku/test/
+      run: ls /home/runner/work/flask-heroku/flask-heroku/test/idchess-stage02-sel.idsport.tech
