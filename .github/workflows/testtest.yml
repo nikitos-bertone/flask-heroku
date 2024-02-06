@@ -19,3 +19,7 @@ jobs:
         sudo apt update
         sudo apt install tree -y
         tree /home/runner/work/flask-heroku/
+    - name: dsad
+      env: 
+       var: '/home/runner/work/flask-heroku/'
+      run: echo $var
